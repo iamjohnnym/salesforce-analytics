@@ -202,29 +202,31 @@ class SalesForceAnalytics(object):
     def count_compliance(self, subject):
         pass
 
+    # All trends are repeating...refactor this
+
     def trend_day(self):
-        """Doing a thing"""
+        """Create trend by day of week"""
         day = self.get_weekday()
         if day not in self.trend['days']:
             self.trend['days'].update({day: 0})
         self.trend['days'][day] += 1
 
     def trend_month(self):
-        """Doing a thing"""
+        """Create trend by month"""
         month = self.get_month()
         if month not in self.trend['months']:
             self.trend['months'].update({month: 0})
         self.trend['months'][month] += 1
 
     def trend_week(self):
-        """Doing a thing"""
+        """create trend by week"""
         week = self.get_week()
         if week not in self.trend['weeks']:
             self.trend['weeks'].update({week: 0})
         self.trend['weeks'][week] += 1
 
     def trend_year(self):
-        """Doing a thing"""
+        """create trend by year"""
         year = self.get_year()
         if year not in self.trend['years']:
             self.trend['years'].update({year: 0})
