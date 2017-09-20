@@ -145,9 +145,6 @@ nosetests -v
   * Priority
   * Handoffs
   * Status
-  * ClearDATA Owner
-  * ClearDATA Acct #
-  * Entourage
   * Compliance
   * Security
   * Mean Time to Close
@@ -165,4 +162,4 @@ Do your thing, make some MR's.
 
 Please toss up any bugs here:
 
-[Issues](http://gitlab.eng.cleardata.com/operations/salesforce/salesforce-analytics/issues)
+[Issues](https://github.com/iamjohnnym/salesforce-analytics/issues)
