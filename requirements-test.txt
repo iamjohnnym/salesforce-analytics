@@ -4,4 +4,3 @@ nose-cov
 bandit
 python-coveralls
 codacy-coverage
-prospector

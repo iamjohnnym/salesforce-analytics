@@ -15,7 +15,3 @@ bandit:
 .PHONY: coveralls
 coveralls:
 	coveralls
-
-.PHONY: prospector
-prospector:
-	prospector
