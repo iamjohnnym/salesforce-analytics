@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/iamjohnnym/salesforce-analytics.svg?token=jwXMHmbEfJmrxyLSfYtH&branch=master)](https://travis-ci.com/iamjohnnym/salesforce-analytics)
 [![Coverage Status](https://coveralls.io/repos/github/iamjohnnym/salesforce-analytics/badge.svg?branch=master)](https://coveralls.io/github/iamjohnnym/salesforce-analytics?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/699af2d695f94865bacfd770c9ddfd90)](https://www.codacy.com/app/iamjohnnym/salesforce-analytics?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=iamjohnnym/salesforce-analytics&amp;utm_campaign=Badge_Grade)
 
 # SalesForce Analytics
 ===================

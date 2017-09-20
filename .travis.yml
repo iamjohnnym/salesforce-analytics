@@ -9,3 +9,5 @@ script:
   - make bandit
 after_success:
   - coveralls
+  - coverage xml
+  - python-codacy-coverage -r coverage.xml
