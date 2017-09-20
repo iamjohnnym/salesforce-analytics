@@ -25,12 +25,12 @@ class SalesForceAnalytics(object):
     def __build_counts(self):
         for key in self.tickets[0].keys():
             if 'attribute' not in key:
-                self.count.update({self.__set_json_compliant_name(key): {}})
+                self.count.update({self.set_json_compliant_name(key): {}})
         return self.count
 
     def __build_trends(self):
         for key in self.trend_topics:
-            self.trend.update({self.__set_json_compliant_name(key): {}})
+            self.trend.update({self.set_json_compliant_name(key): {}})
         return self.trend
 
     def __build_dataset(self):
@@ -40,7 +40,7 @@ class SalesForceAnalytics(object):
 
     def __add_key(self, key):
         if key not in self.count:
-            self.count[self.__set_json_compliant_name(key)] = {}
+            self.count[self.set_json_compliant_name(key)] = {}
 
     def __build_priority(self):
         for priority in ['1', '2', '3']:
@@ -49,18 +49,18 @@ class SalesForceAnalytics(object):
     def __set_count_keys(self, key, value):
         """ See if the count contains the value, if not, create key with a
         value of 0"""
-        if value not in self.count[self.__set_json_compliant_name(key)]:
-            self.count[self.__set_json_compliant_name(key)][value] = 0
-        self.count[self.__set_json_compliant_name(key)][value] += 1
+        if value not in self.count[self.set_json_compliant_name(key)]:
+            self.count[self.set_json_compliant_name(key)][value] = 0
+        self.count[self.set_json_compliant_name(key)][value] += 1
 
     def __set_mtc_times(self, key, value, ticket):
-        name = self.__set_json_compliant_name(key)
+        name = self.set_json_compliant_name(key)
         if name not in self.mtc_time:
             self.mtc_time.update({name: {}})
         if value not in self.mtc_time:
             self.mtc_time[name].update({value: {}})
 
-    def __set_json_compliant_name(self, salesforce_field):
+    def set_json_compliant_name(self, salesforce_field):
         name = salesforce_field[:1].lower() + salesforce_field[1:]
         name = name.replace('__c', '')
         name = name.replace('_', '')
@@ -103,15 +103,15 @@ class SalesForceAnalytics(object):
         VAR :: key :: This is a SalesForce field within the ticket
         VAR :: value :: The value of the SalesForce Field
         """
-        key = self.__set_json_compliant_name(key)
+        key = self.set_json_compliant_name(key)
         if not 'attribute' in key:
             try:
-                """This will try and execute against a custom method for
-                given fields."""
+                # This will try and execute against a custom method for
+                # given fields.
                 getattr(self, 'count_'+key.lower())(value)
-            except AttributeError, error:
-                """If nothing special needs to happen when counting the
-                fields, default to a default counter"""
+            except AttributeError:
+                # If nothing special needs to happen when counting the
+                # fields, default to a default counter
                 self.default_counter(salesforce_field=key, value=value)
 
     def describe_trend(self, created_date):
