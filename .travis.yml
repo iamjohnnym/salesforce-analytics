@@ -4,5 +4,6 @@ python:
 before_script:
   - pip install -r requirements.txt
   - pip install -r requirements-test.txt
-script: make test
-script: make bandit
+script:
+  - make test
+  - make bandit
