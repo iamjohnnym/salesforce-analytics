@@ -6,7 +6,6 @@ import unittest
 import json
 import os
 from salesforce_analytics import SalesForceAnalytics
-import pprint
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
