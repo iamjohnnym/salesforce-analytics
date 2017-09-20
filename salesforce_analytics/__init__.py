@@ -119,7 +119,7 @@ class SalesForceAnalytics(object):
         for trend in ['day', 'week', 'month', 'year']:
             try:
                 getattr(self, 'trend_'+trend)()
-            except AttributeError, error:
+            except AttributeError:
                 pass
 
     def describe_dataset(self):
