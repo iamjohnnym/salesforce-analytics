@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/iamjohnnym/salesforce-analytics.svg?token=jwXMHmbEfJmrxyLSfYtH&branch=master)](https://travis-ci.com/iamjohnnym/salesforce-analytics)
+[![Coverage Status](https://coveralls.io/repos/github/iamjohnnym/salesforce-analytics/badge.svg?branch=master)](https://coveralls.io/github/iamjohnnym/salesforce-analytics?branch=master)
+
 # SalesForce Analytics
 ===================
 
