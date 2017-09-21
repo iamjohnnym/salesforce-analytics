@@ -19,7 +19,7 @@ class SalesForceAnalytics(object):
         """Init
         """
         self.trend_topics = ['days', 'weeks', 'months', 'years']
-        self.tickets = tickets
+        self.tickets = json.loads(tickets)
         self.dataset = {}
         self.count = {}
         self.trend = {}
