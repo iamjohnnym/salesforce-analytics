@@ -11,18 +11,12 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 with open(dir_path+"/mock/sample-tickets.json", 'r') as f:
     tickets = f.read()
-tickets = json.loads(tickets)
 
 class TestSalesForceAnalytics(unittest.TestCase):
     def setUp(self):
         self.analytics = SalesForceAnalytics(
             tickets=tickets
             )
-
-    def test_sample_tickets(self):
-        self.assertEqual(3182, len(tickets))
-        self.assertIsInstance(tickets, list)
-        self.assertIsInstance(tickets[0], dict)
 
     def test_prepare_analytics(self):
         self.assertNotEqual(0, len(self.analytics.count))
