@@ -6,7 +6,7 @@ def readme():
 
 
 setup(name='salesforce-analytics',
-      version='0.1.3b',
+      version='0.1.3c',
       description="""Client to injest SalesForce Case information and generate
       analytics for trends and current statistics for evaluating on the
       fly""",
