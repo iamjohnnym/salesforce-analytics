@@ -36,31 +36,36 @@ class TestSalesForceAnalytics(unittest.TestCase):
             )
 
     def test_iterate_tickets(self):
-        self.analytics.run()
-        print self.analytics.results
+        results = self.analytics.run()
+        cresults = results['count']
+        mresults = results['mtc']
         self.assertEqual(
-            self.analytics.count['priority'],
+            cresults['priority'],
             {'1': 1065, '3': 1042, '2': 1075}
         )
         self.assertEqual(
-            self.analytics.count['status'],
+            cresults['status'],
             {u'In-Progress': 829, u'New': 782, u'Waiting-Customer': 822, u'Closed': 749}
         )
         self.assertEqual(
-            self.analytics.count['handoff'],
+            cresults['handoff'],
             3182
         )
         self.assertEqual(
-            self.analytics.count['typev2'],
+            cresults['typev2'],
             {u'Networking': 525, u'Compliance': 532, u'Change Request': 527, u'System': 531, u'Other': 543, u'System / Environment Build': 524}
         )
         self.assertEqual(
-            self.analytics.count['accountNumber'],
+            cresults['accountNumber'],
             {'150': 59, '135': 50, '112': 64, '115': 76, '132': 56, '117': 73, '130': 66, '137': 53, '110': 62, '113': 65, '134': 62, '139': 71, '138': 65, '119': 63, '118': 64, '116': 59, '128': 54, '146': 63, '147': 60, '144': 51, '145': 59, '142': 52, '143': 61, '140': 74, '141': 64, '148': 55, '149': 61, '120': 64, '121': 69, '122': 77, '109': 72, '124': 69, '125': 68, '129': 72, '127': 57, '102': 56, '103': 50, '100': 75, '101': 71, '106': 57, '107': 70, '104': 56, '105': 60, '133': 77, '114': 49, '108': 59, '131': 71, '123': 53, '111': 64, '126': 46, '136': 58}
         )
         self.assertEqual(
-            self.analytics.count['compliance'],
+            cresults['compliance'],
             {'old_compliance': 659}
+        )
+        self.assertEqual(
+            mresults['total'],
+            '372 days, 16:12:53.305740'
         )
 
 

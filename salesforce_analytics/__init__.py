@@ -83,7 +83,7 @@ class SalesForceAnalytics(object):
                 except TypeError:
                     calculation = date
             mtc = calculation / len(self.mtc_counts[category])
-            self.mtc.update({category: mtc})
+            self.mtc.update({category: str(mtc)})
 
     def get_weekday(self):
         return self.weekday
